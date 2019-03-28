@@ -39,7 +39,7 @@ const Link = styled.li`
 `;
 
 export default function BurgerMenu() {
-  const [open, setOpen] = useState(true);
+  const [open, setOpen] = useState(false);
   const toggleMenu = () => setOpen(!open);
   return (
     <div>
