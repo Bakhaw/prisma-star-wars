@@ -16,13 +16,16 @@ const Wrapper = styled.footer`
   background-image: ${props => `url('${props.backgroundImage}')`};
   background-repeat: no-repeat;
   background-size: cover;
+  @media (max-width: 1000px) {
+    padding: 50px 0;
+  }
 `;
 
 const Row = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
-  @media (max-width: 800px) {
+  @media (max-width: 1000px) {
     justify-content: flex-start;
     flex-direction: column;
   }
@@ -33,7 +36,7 @@ const Links = styled.ul`
   display: grid;
   grid-template-columns: repeat(2, 30vw);
   grid-template-rows: repeat(3, 40px);
-  @media (max-width: 800px) {
+  @media (max-width: 1000px) {
     grid-template-columns: repeat(2, 50vw);
   }
 `;
