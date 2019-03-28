@@ -1,16 +1,11 @@
 import React from 'react';
 import styled from 'styled-components';
 
-const NavLinks = [
-  'le côté lumineux',
-  'le côté obscur',
-  "l'empire",
-  'les droïdes',
-  'les ewoks',
-  'jabba le huit'
-];
+import BurgerMenu from './BurgerMenu';
+import NavLinks from './NavLinks';
 
 const Nav = styled.nav`
+  align-items: center;
   background-color: rgba(0, 0, 0, 0.7);
   position: fixed;
   top: 0;
@@ -32,13 +27,19 @@ const Link = styled.li`
 `;
 
 export default function NavBar() {
+  const isSmallScreen = window.screen.width <= 1000;
+
   return (
     <Nav>
-      <Links>
-        {NavLinks.map((link, index) => (
-          <Link key={index}>{link}</Link>
-        ))}
-      </Links>
+      {isSmallScreen ? (
+        <BurgerMenu />
+      ) : (
+        <Links>
+          {NavLinks.map((link, index) => (
+            <Link key={index}>{link}</Link>
+          ))}
+        </Links>
+      )}
     </Nav>
   );
 }
