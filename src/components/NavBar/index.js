@@ -26,13 +26,13 @@ const Link = styled.li`
   text-transform: uppercase;
 `;
 
-export default function NavBar() {
+export default function NavBar(props) {
   const isSmallScreen = window.screen.width <= 1000;
 
   return (
     <Nav>
       {isSmallScreen ? (
-        <BurgerMenu />
+        <BurgerMenu {...props} />
       ) : (
         <Links>
           {NavLinks.map((link, index) => (

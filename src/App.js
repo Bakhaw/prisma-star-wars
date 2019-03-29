@@ -1,5 +1,5 @@
-import React from 'react';
-import { createGlobalStyle } from 'styled-components';
+import React, { useState } from 'react';
+import styled, { createGlobalStyle } from 'styled-components';
 
 // Assets
 import HeaderBg from './assets/header.png';
@@ -26,32 +26,41 @@ const GlobalStyle = createGlobalStyle`
   }
 `;
 
+const ContentWrapper = styled.div`
+  display: ${props => (props.open ? 'none' : 'block')};
+`;
+
 export default function App() {
+  const [open, setOpen] = useState(false);
+  const toggleMenu = () => setOpen(!open);
+
   return (
-    <div>
+    <>
       <GlobalStyle />
-      <NavBar />
-      <Bandeau
-        description='Star Wars header background'
-        height='100vh'
-        sizeMode='cover'
-        src={HeaderBg}
-      />
-      <BattlefrontAd />
-      <Bandeau
-        description='Kiloren background'
-        height='500px'
-        sizeMode='cover'
-        src={KilorenBg}
-      />
-      <StarWarsDescription />
-      <Bandeau
-        description='Storm Troopers background'
-        height='250px'
-        sizeMode='contain'
-        src={StormTroopers}
-      />
-      <Footer />
-    </div>
+      <NavBar open={open} toggleMenu={toggleMenu} />
+      <ContentWrapper open={open}>
+        <Bandeau
+          description='Star Wars header background'
+          height='100vh'
+          sizeMode='cover'
+          src={HeaderBg}
+        />
+        <BattlefrontAd />
+        <Bandeau
+          description='Kiloren background'
+          height='500px'
+          sizeMode='cover'
+          src={KilorenBg}
+        />
+        <StarWarsDescription />
+        <Bandeau
+          description='Storm Troopers background'
+          height='250px'
+          sizeMode='contain'
+          src={StormTroopers}
+        />
+        <Footer />
+      </ContentWrapper>
+    </>
   );
 }

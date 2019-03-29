@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React from 'react';
 import styled from 'styled-components';
 
 import CloseIcon from '../../assets/close.png';
@@ -38,9 +38,7 @@ const Link = styled.li`
   font-size: 22px;
 `;
 
-export default function BurgerMenu() {
-  const [open, setOpen] = useState(false);
-  const toggleMenu = () => setOpen(!open);
+export default function BurgerMenu({ open, toggleMenu }) {
   return (
     <div>
       <Icon alt='Burger menu icon' onClick={toggleMenu} src={MenuIcon} />
