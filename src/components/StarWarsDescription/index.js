@@ -4,7 +4,7 @@ import styled from 'styled-components';
 import DescriptionImg from '../../assets/r2d2_c3p0.jpg';
 
 const Wrapper = styled.div`
-  width: 60%;
+  width: 70%;
   padding: 50px 0;
   margin: auto;
   font-size: 18px;
