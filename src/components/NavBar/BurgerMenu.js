@@ -40,7 +40,7 @@ const Link = styled.li`
 
 export default function BurgerMenu({ open, toggleMenu }) {
   return (
-    <div>
+    <>
       <Icon alt='Burger menu icon' onClick={toggleMenu} src={MenuIcon} />
       {open && (
         <Modal backgroundImage={Stars}>
@@ -52,6 +52,6 @@ export default function BurgerMenu({ open, toggleMenu }) {
           </Links>
         </Modal>
       )}
-    </div>
+    </>
   );
 }
