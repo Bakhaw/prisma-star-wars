@@ -17,10 +17,10 @@ $ yarn install
 
 #### Start the app
 
-```
-$ npm start
+```bash
+$ npm run dev
 or
-$ yarn start
+$ yarn dev
 ```
 
 #### If you are not redirected, visit [this page](http://localhost:3000)
